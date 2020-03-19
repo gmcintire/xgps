@@ -6,7 +6,7 @@ defmodule XGPS.Mixfile do
       app: :xgps,
       name: XGPS,
       version: "0.4.1",
-      elixir: ">= 1.7.0",
+      elixir: "~> 1.10",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/gmcintire/xgps",

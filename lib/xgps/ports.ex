@@ -133,9 +133,9 @@ defmodule XGPS.Ports do
 
   def init(:ok) do
     children = [
-      supervisor(XGPS.Port.Supervisor, [], restart: :transient)
+      {XGPS.Port.Supervisor, strategy: :one_for_one, name: XGPS.Port.Supervisor}
     ]
-    supervise(children, strategy: :simple_one_for_one)
+    Supervisor.init(children, strategy: :one_for_one)
   end
 
   defp get_running_simulators do
